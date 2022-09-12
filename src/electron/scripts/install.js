@@ -38,7 +38,7 @@
 //     }
 // }
 
-// async function main() {
+async function main() {
 //     // Install if we have to.
 
 //     if (!fs.existsSync(targetLoc)) {
@@ -47,6 +47,6 @@
 //         }
 //         await download();
 //     }
-// }
+}
 
-// main();
+main();

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const ver = "0.1.1";
+const ver = "0.1.2";
 function updatePath(path) {
     var j = JSON.parse(fs.readFileSync(path).toString());
     j.version = ver;
@@ -9,7 +9,7 @@ function updatePath(path) {
 
 function updateXml(path) {
     var xml = fs.readFileSync(path).toString();
-    const regex = xml.replace(/version="([^\"]*)">/i, "version=\""+ ver +"\"");
+    const regex = xml.replace(/version="([^\"]*)">/i, "version=\""+ ver +"\">");
     fs.writeFileSync(path, regex);
 }
 
