@@ -1,0 +1,1 @@
+Cordova plugin to allow electron to access the windows.devices.geolocation winrt library.

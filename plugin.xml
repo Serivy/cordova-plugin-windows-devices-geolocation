@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-windows-devices-geolocation"
+    version="0.1.0">
+    <name>WinGeoLocation</name>
+    <description>Cordova Electron Windows Devices Geolocation Plugin</description>
+    <license></license>
+    <keywords>cordova,geolocation</keywords>
+    <repo>https://github.com/Serivy/cordova-plugin-windows-devices-geolocation</repo>
+    <issue>https://github.com/Serivy/cordova-plugin-windows-devices-geolocation/issues</issue>
+
+    <engines>
+        <engine name="cordova-electron" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/WinGeoLocation.js" name="wingeolocation">
+        <clobbers target="wingeolocation" />
+    </js-module>
+
+    <!-- electron -->
+    <platform name="electron">
+        <framework src="src/electron" />
+    </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="wingeolocation">
+                <param name="browser-package" value="wingeolocation" />
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/WinGeoLocationProxy.js" name="WinGeoLocationProxy">
+            <runs />
+        </js-module>
+    </platform>
+</plugin>

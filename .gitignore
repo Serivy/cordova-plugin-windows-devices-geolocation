@@ -1,0 +1,10 @@
+﻿node_modules/
+
+src/electron/package-lock.json
+
+tmp/
+temptest/
+nodertbuilder/
+
+# Any mistaken node modules.
+*.node

@@ -1,0 +1,50 @@
+{
+  "name": "cordova-plugin-windows-devices-geolocation",
+  "version": "0.1.0",
+  "description": "Cordova Windows Devices Geolocation Plugin",
+  "types": "./types/index.d.ts",
+  "cordova": {
+    "id": "cordova-plugin-windows-devices-geolocation",
+    "platforms": [
+      "electron"
+    ]
+  },
+  "repository": "github:serivy/cordova-plugin-windows-devices-geolocation",
+  "bugs": "https://github.com/serivy/cordova-plugin-windows-devices-geolocation/issues",
+  "keywords": [
+    "cordova",
+    "windows-devices-geolocation",
+    "ecosystem:cordova",
+    "cordova-electron"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "reinstallplugin": "cd temptest && npx cordova plugin remove cordova-plugin-windows-devices-geolocation && npx cordova plugin add .. --link",
+    "start": "npx nodemon --watch test-res --exec \"pwsh -c Copy-Item test-res\\* temptest\\www -Force && cd temptest && npx cordova run electron --nobuild\" --ext js,html",
+    "run-test": "cd temptest && npx cordova run electron --nobuild",
+    "setup": "npm run setuptest1 && npm run setuptest2 && npm run setuptest3 && npm run setuptest4",
+    "setuptest1": "pwsh -c remove-item temptest -Recurse -Force -ErrorAction SilentlyContinue; exit 0 && pwsh -c \"mkdir temptest > $null\"",
+    "setuptest2": "npx cordova create temptest && cd temptest && npm i cordova --save-dev && npx cordova platform add electron",
+    "setuptest3": "cd temptest && npx cordova plugin add .. --link",
+    "setuptest4": "pwsh -c Copy-Item test-res\\* temptest\\www -Force",
+    "setup-bin": "npm run setup-bin1 && npm run setup-bin2 && npm run setup-bin3",
+    "setup-bin1": "pwsh -c remove-item nodertbuilder -Recurse -Force -ErrorAction SilentlyContinue; exit 0 && pwsh -c \"mkdir nodertbuilder > $null\"",
+    "setup-bin2": "cd nodertbuilder && npm init -y && npm install electron-builder electron-rebuild --save-dev && npm install @nodert-win10-rs3/windows.devices.geolocation",
+    "setup-bin3": "node iterate-scripts",
+    "setup-bin4": "cd nodertbuilder && npx electron-rebuild",
+    "test": "npm run lint"
+  },
+  "author": "Seravy",
+  "engines": {
+    "cordovaDependencies": {
+      "3.0.0": {
+        "cordova": ">100",
+        "cordova-electron": ">=3.0.0"
+      }
+    }
+  },
+  "devDependencies": {
+    "@cordova/eslint-config": "^3.0.0",
+    "nodemon": "^2.0.19"
+  }
+}
