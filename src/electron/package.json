@@ -1,20 +1,23 @@
 {
-  "name": "cordova-plugin-windows-devices-geolocation-electron",
-  "version": "0.1.0",
-  "description": "Electron Native Support for windows-devices-geolocation",
-  "main": "index.js",
-  "keywords": [
-    "cordova",
-    "electron",
-    "wingeolocation",
-    "native"
-  ],
-  "author": "Seravy",
-  "license": "",
-  "dependencies": {
-    "@nodert-win10-rs3/windows.devices.geolocation": "^0.4.4"
-  },
-  "cordova": {
-    "serviceName": "WinGeoLocation"
-  }
+    "name": "cordova-plugin-windows-devices-geolocation-electron",
+    "version": "0.1.1",
+    "description": "Electron Native Support for windows-devices-geolocation",
+    "main": "index.js",
+    "keywords": [
+        "cordova",
+        "electron",
+        "wingeolocation",
+        "native"
+    ],
+    "author": "Seravy",
+    "license": "",
+    "scripts": {
+        "install": "node scripts/install"
+    },
+    "dependencies": {
+        "request": "^2.88.2"
+    },
+    "cordova": {
+        "serviceName": "WinGeoLocation"
+    }
 }

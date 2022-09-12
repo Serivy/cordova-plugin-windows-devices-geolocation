@@ -1,6 +1,6 @@
 {
     "files.exclude": {
-        "temptest/": true,
+        "temptesta/": true,
         "node_modules": true
     }
 }
