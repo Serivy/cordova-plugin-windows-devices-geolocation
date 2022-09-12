@@ -4,7 +4,7 @@
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-windows-devices-geolocation"
-    version="0.1.2">
+    version="0.1.3">
     <name>WinGeoLocation</name>
     <description>Cordova Electron Windows Devices Geolocation Plugin</description>
     <license></license>

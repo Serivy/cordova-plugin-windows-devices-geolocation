@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-windows-devices-geolocation-electron",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Electron Native Support for windows-devices-geolocation",
     "main": "index.js",
     "keywords": [
