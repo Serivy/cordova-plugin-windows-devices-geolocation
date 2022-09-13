@@ -18,4 +18,25 @@ function onDeviceReady() {
             text.innerText = `Error occured.`;
         });
     }
+
+    var lastId = 0;
+    var watchbutton = document.getElementById("watchlocation");
+    watchbutton.onclick = function() {
+        lastId = wingeolocation.watchPosition((position) => {
+             /** @type {GeolocationPosition} */
+            var pos = position;
+            var text = document.getElementById("watch");
+            text.innerText = `time: ${pos.timesamp.getUTCSeconds()}`;
+        }, (e) => {
+            var text = document.getElementById("watch");
+            text.innerText = `Error occured.`;
+        });
+    }
+
+    var clearwatch = document.getElementById("clearwatch");
+    clearwatch.onclick = function() {
+        wingeolocation.clearWatch(lastId);
+        var text = document.getElementById("watch");
+        text.innerText = `Cleared...`;
+    }
 }

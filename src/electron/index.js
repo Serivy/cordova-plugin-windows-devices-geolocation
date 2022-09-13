@@ -3,7 +3,11 @@ const { Geolocator } = require('./nodert')
 module.exports = {
     getCurrentPosition: async (options) => {
         const locator = new Geolocator()
-        var result = await new Promise((resolve, reject) => locator.getGeopositionAsync((error, result) => { if (error) { reject(error); } else { resolve(result); } }));
+        const timeout = options?.timeout ?? 60000;
+        const maximumAge = options?.maximumAge ?? 0;
+
+        // https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync?view=winrt-22621
+        var result = await new Promise((resolve, reject) => locator.getGeopositionAsync(maximumAge, timeout, (error, result) => { if (error) { reject(error); } else { resolve(result); } }));
         
         // Result is https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoposition?view=winrt-22621
         const { coordinate } = result
