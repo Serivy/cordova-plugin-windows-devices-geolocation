@@ -4,9 +4,9 @@ var channel = require('cordova/channel');
 var exec = require('cordova/exec');
 var cordova = require('cordova');
 
-channel.createSticky('onCordovaInfoReady');
-// Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
+channel.createSticky('onWinGeoLocationReady');
+// Tell cordova channel to wait on the onWinGeoLocationReady event
+channel.waitForInitialization('onWinGeoLocationReady');
 
 const defaultWatchTimer = 5000;
 
@@ -16,7 +16,7 @@ const defaultWatchTimer = 5000;
 class WinGeoLocation {
     constructor() {
         channel.onCordovaReady.subscribe(function () {
-            channel.onCordovaInfoReady.fire();
+            channel.initializationComplete('onWinGeoLocationReady');
         });
     }
 
@@ -42,6 +42,7 @@ class WinGeoLocation {
     watchPosition(success, error, options) {
         argscheck.checkArgs('fF', 'WinGeoLocation.watchPosition', arguments);
 
+        // Cant really call native watch until electron plugin supports keep callback https://github.com/apache/cordova-electron/pull/218
         this.getCurrentPosition(success, error, options);
         var id = setInterval(() => {
             this.getCurrentPosition(success, error, options);
