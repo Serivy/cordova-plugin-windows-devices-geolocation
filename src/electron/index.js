@@ -14,6 +14,12 @@ module.exports = {
             locator.desiredAccuracyInMeters = options.desiredAccuracyInMeters;
         }
 
+        // Option that comes from web api options.
+        if (options.enableHighAccuracy) {
+            locator.desiredAccuracy = 1;
+            locator.desiredAccuracyInMeters = 1;
+        }
+
         // https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync?view=winrt-22621
         var result = await new Promise((resolve, reject) => locator.getGeopositionAsync(maximumAge, timeout, (error, result) => { if (error) { reject(error); } else { resolve(result); } }));
         
