@@ -6,6 +6,14 @@ module.exports = {
         const timeout = options?.timeout ?? 60000;
         const maximumAge = options?.maximumAge ?? 0;
 
+        if (options.desiredAccuracy) {
+            locator.desiredAccuracy = options.desiredAccuracy;
+        }
+
+        if (options.desiredAccuracyInMeters) {
+            locator.desiredAccuracyInMeters = options.desiredAccuracyInMeters;
+        }
+
         // https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync?view=winrt-22621
         var result = await new Promise((resolve, reject) => locator.getGeopositionAsync(maximumAge, timeout, (error, result) => { if (error) { reject(error); } else { resolve(result); } }));
         
