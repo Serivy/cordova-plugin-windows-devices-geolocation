@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const ver = "30.0.3";
+const ver = "30.0.4";
 function updatePath(path) {
     var j = JSON.parse(fs.readFileSync(path).toString());
     j.version = ver;

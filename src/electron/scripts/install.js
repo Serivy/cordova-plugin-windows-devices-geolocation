@@ -49,4 +49,5 @@ async function main() {
 //     }
 }
 
+// To run this, add scripts { "install": "node scripts/install" } to package.json
 main();
