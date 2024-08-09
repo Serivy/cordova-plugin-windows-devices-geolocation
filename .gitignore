@@ -2,9 +2,11 @@
 
 src/electron/package-lock.json
 
+localdev/
 tmp/
 temptest/
 nodertbuilder/
-
+*.tgz
 # Any mistaken node modules.
 *.node
+setupsdk/

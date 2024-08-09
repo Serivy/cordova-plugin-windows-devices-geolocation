@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <!-- <WindowsSDK_MetadataPath>$(MSBuildThisFileDirectory)\setupsdk</WindowsSDK_MetadataPath>
+    <VC_LibraryPath_x64>$(MSBuildThisFileDirectory)\setupsdk</VC_LibraryPath_x64>
+    <WindowsSDK_LibraryPath_x64>$(MSBuildThisFileDirectory)\setupsdk</WindowsSDK_LibraryPath_x64>
+    <WindowsSDK_IncludePath>$(MSBuildThisFileDirectory)\setupsdk</WindowsSDK_IncludePath> -->
+  </PropertyGroup>
+</Project>

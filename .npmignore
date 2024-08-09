@@ -6,3 +6,9 @@ src/electron/package-lock.json
 nodertbuilder
 temptest
 tmp
+setupsdk
+scripts
+iterate-scripts.js
+test-res
+Directory.Build.props
+*.tgz

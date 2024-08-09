@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-windows-devices-geolocation",
-    "version": "0.1.6",
+    "version": "30.0.3",
     "description": "Cordova Windows Devices Geolocation Plugin",
     "types": "./types/index.d.ts",
     "cordova": {
@@ -39,8 +39,13 @@
     "engines": {
         "cordovaDependencies": {
             "3.0.0": {
-                "cordova": ">100",
                 "cordova-electron": ">=3.0.0"
+            },
+            "30.0.0": {
+                "cordova-electron": ">=4.0.0"
+            },
+            "31.0.0": {
+                "cordova": ">100"
             }
         }
     },
